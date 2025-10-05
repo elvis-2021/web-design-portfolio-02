@@ -1,10 +1,114 @@
-<h1>My top 5 favourite websites</h1>
-<ol start="10">
-  <li><a href="https://www.google.com/">Google</a></li>
-  <li><a href="https://www.netflix.com/browse">Netflix</a></li>
-  <li><a href="www.udemy.com">Udemy</a></li>
-  <li><a href="www.teracreations.com">Tera Creations</a></li>
-  <li><a href="www.elvisw.online">Elvis W Website</a></li>
-</ol>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YourBrand — Modern landing page</title>
+  <meta name="description" content="A clean, responsive landing page you can customize in minutes." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#top" class="brand">YourBrand</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <ul id="primary-nav" class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="btn btn--small" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<img src="Elvis Warutumo Photo for TikTok circle.png" alt="">
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-content">
+        <h1>Build a clean landing page fast</h1>
+        <p class="lead">Modern, responsive, and accessible out of the box—no build step needed.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#contact">Get Started</a>
+          <a class="btn btn--ghost" href="#features">See Features</a>
+        </div>
+        <div class="social-proof">
+          <span class="badge">No frameworks</span>
+          <span class="badge">Mobile-first</span>
+          <span class="badge">A11y friendly</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="Elvis Warutumo Photo for TikTok circle.png" alt="Profile image" onerror="this.remove()" />
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <h2>Features</h2>
+      <div class="grid features-grid">
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Responsive layout</h3>
+          <p>Mobile-first grid that scales beautifully on any screen size.</p>
+        </div>
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Clean components</h3>
+          <p>Reusable cards, buttons, and sections with sensible defaults.</p>
+        </div>
+        <div class="card">
+          <div class="icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 12l6 6L21 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Accessible by design</h3>
+          <p>Keyboard-friendly navigation and sufficient color contrast.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section section--alt container">
+      <h2>About</h2>
+      <p>This starter landing page is built with semantic HTML and lightweight CSS. It’s easy to customize for your product or portfolio.</p>
+    </section>
+
+    <section id="contact" class="section cta container">
+      <h2>Ready to get started?</h2>
+      <p>Drop a line and we’ll get back within 24 hours.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="mailto:hello@example.com">Email us</a>
+        <a class="btn" href="#top">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> YourBrand</p>
+      <ul class="footer-links">
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const navToggleButton = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('primary-nav');
+    if (navToggleButton && navLinks) {
+      navToggleButton.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('is-open');
+        navToggleButton.setAttribute('aria-expanded', String(isOpen));
+      });
+    }
+    const yearEl = document.getElementById('year');
+    if (yearEl) {
+      yearEl.textContent = String(new Date().getFullYear());
+    }
+  </script>
+</body>
+</html>
